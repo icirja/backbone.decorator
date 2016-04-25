@@ -1,1 +1,1 @@
-# backbone.decorator
+# backbone.decorators
