@@ -1,6 +1,8 @@
 {
-  "name": "backbone-decorator",
+  "name": "backbone.decorators",
   "version": "0.0.1",
+  "author": "Ionut Cirja",
+  "repository": "https://github.com/ionutcirja/backbone.decorators.git",
   "dependencies": {
     "backbone": "~1.3.3",
     "underscore": "~1.8.3",
