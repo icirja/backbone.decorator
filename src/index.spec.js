@@ -1,10 +1,9 @@
 var Backbone = require('backbone');
-require('../index');
 var expect = require('chai').expect;
+require('./');
 
-describe('Backbone Decorator', function() {
-
-    it('should attach decorators to a backbone entity if an decorators object is passed to the constructor', function() {
+describe('Backbone decorators', function() {
+    it('should attach decorators to a backbone entity if a decorators object is passed to the constructor', function() {
         function decorator() {
             return {
                 decoratorMethod: function() {
@@ -21,7 +20,7 @@ describe('Backbone Decorator', function() {
         expect(collection.decoratorMethod()).to.equal('some value');
     });
 
-    it('should throw an error if something else then a function is passed as an decorator', function() {
+    it('should throw an error if something else then a function is passed as a decorator', function() {
         expect(function() {
             new Backbone.View({
                 decorators: [
@@ -49,7 +48,7 @@ describe('Backbone Decorator', function() {
         expect(view.someObj).to.eql({someProperty: 'same value', otherProperty: 'other value'});
     });
 
-    it('should compose decorators methods if the decorators are exposing the same name for one or more methods', function() {
+    it('should compose decorators methods if decorators are exposing the same name for one or more methods', function() {
         function decorator() {
             return {
                 someMethod: function(num) {
