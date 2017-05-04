@@ -25,8 +25,8 @@ require('backbone-decorators');
 
 var decorator = function() {
     return {
-        someMethod: function() {
-            return 1;
+        someMethod: function(num) {
+            return num + 1;
         }
     };
 };
@@ -34,26 +34,32 @@ var decorator = function() {
 var anotherDecorator = function() {
     return {
         someMethod: function(num) {
-            return num + 1;
+            return num + 2;
         }
     };
 };
 
 var View = Backbone.View.extend({
-    decorators: [decorator, anotherDecorator]
+    decorators: [decorator, anotherDecorator],
+    someMethod: function() {
+        return 1;
+    }
 });
 
 var view = new View();
-// view.someMethod() = 2;
+// view.someMethod() = 4;
 ```
 
 ## Decorators can also be passed as an option to the backbone entity constructor.
 
 ```js
 var view = new Backbone.View({
-    decorators: [decorator, anotherDecorator]
+    decorators: [decorator, anotherDecorator],
+    someMethod: function() {
+        return 1;
+    }
 });
-// view.someMethod() = 2;
+// view.someMethod() = 4;
 ```
 
 ## A decorator property can be a function or an object.
