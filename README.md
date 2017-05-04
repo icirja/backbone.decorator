@@ -57,3 +57,22 @@ var view = new Backbone.View({
 ```
 
 ## A decorator property can be a function or an object.
+
+```js
+var decorator = function() {
+    return {
+        someObj: {someProperty: 'same value'}
+    }
+};
+
+var anotherDecorator = function() {
+    return {
+        someObj: {otherProperty: 'other value'}
+    }
+};
+
+var view = new Backbone.View({
+    decorators: [decorator, anotherDecorator]
+});
+// view.someObj = {someProperty: 'same value', otherProperty: 'other value'};
+```
