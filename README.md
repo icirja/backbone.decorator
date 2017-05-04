@@ -39,12 +39,21 @@ var anotherDecorator = function() {
     };
 };
 
+var View = Backbone.View.extend({
+    decorators: [decorator, anotherDecorator]
+});
+
+var view = new View();
+// view.someMethod() = 2;
+```
+
+## Decorators can also be passed as an option to the backbone entity constructor.
+
+```js
 var view = new Backbone.View({
     decorators: [decorator, anotherDecorator]
 });
 // view.someMethod() = 2;
 ```
-
-## Decorators can also be passed as an option to the backbone entity constructor.
 
 ## A decorator property can be a function or an object.
