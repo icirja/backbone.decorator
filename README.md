@@ -15,13 +15,9 @@ npm install backbone-decorators
 
 # Usage
 
-Decorators can be defined for backbone views, models and collections.
-
-Decorators can also be passed as an option to the backbone entity constructor.
+## Decorators can be defined for backbone views, models and collections.
 
 A decorator must be a function.
-
-A decorator property can be a function or an object.
 
 ```js
 var Backbone = require('backbone');
@@ -48,3 +44,7 @@ var view = new Backbone.View({
 });
 // view.someMethod() = 2;
 ```
+
+## Decorators can also be passed as an option to the backbone entity constructor.
+
+## A decorator property can be a function or an object.
